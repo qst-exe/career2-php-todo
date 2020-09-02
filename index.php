@@ -1,5 +1,11 @@
 <?php
 
+require_once './todo.php';
+$todo = new Todo();
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $todo->post($_POST['title'], $_POST['due_date']);
+}
 ?>
 <!DOCTYPE>
 <html lang="ja">
