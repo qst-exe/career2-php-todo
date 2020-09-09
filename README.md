@@ -14,3 +14,8 @@ TODアプリです。
 ---
 
 [職業実践Ⅱ(PHP)](https://github.com/qst-exe/carrier2-php)
+
+
+## Tips 
+
+[GitのPUSHに失敗するとき](https://wak-tech.com/archives/933)
