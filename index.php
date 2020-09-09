@@ -38,6 +38,36 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
             <input class="btn btn-primary"  type="submit" name="btn" value="TODOを作成する">
         </form>
+
+        <hr>
+
+        <h2 class="text-muted py-3">やること一覧</h2>
+
+        <?php
+        $todo_list = $todo->getList();
+        ?>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>タイトル</th>
+                <th>期限</th>
+                <th>状態</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            foreach ($todo_list as $todo) {
+                ?>
+                <tr>
+                    <td><?=$todo['title']; ?></td>
+                    <td><?=$todo['due_date']; ?></td>
+                    <td><?=$todo['status_for_display']; ?></td>
+                </tr>
+                <?php
+            }
+            ?>
+            </tbody>
+        </table>
     </div>
 </div>
 
