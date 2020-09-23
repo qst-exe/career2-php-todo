@@ -59,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <th>タイトル</th>
                 <th>期限</th>
                 <th>状態</th>
+                <th>更新</th>
             </tr>
             </thead>
             <tbody>
@@ -66,9 +67,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             foreach ($todo_list as $todo) {
                 ?>
                 <tr>
-                    <td><?=$todo['title']; ?></td>
-                    <td><?=$todo['due_date']; ?></td>
-                    <td><?=$todo['status_for_display']; ?></td>
+                    <form method="POST" action="<?php print($_SERVER['PHP_SELF']) ?>">
+                        <td><?=$todo['title']; ?></td>
+                        <td><?=$todo['due_date']; ?></td>
+                        <td class="label">
+                            <label>
+                                <select name="status" class="form-control">
+                                    <?php
+                                    foreach (Todo::STATUS as $key => $label) {
+                                        $is_selected = $key === $todo["status"] ? "selected": "";
+                                        echo "<option value='$key' $is_selected>$label</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </label>
+                        </td>
+                        <td>
+                            <input type="hidden" name="method" value="UPDATE">
+                            <input type="hidden" name="todo_id" value="<?=$todo["id"]; ?>">
+                            <button class="btn btn-primary" type="submit">変更</button>
+                        </td>
+                    </form>
                 </tr>
                 <?php
             }
