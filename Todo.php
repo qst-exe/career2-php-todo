@@ -54,6 +54,20 @@ class Todo
     }
 
     /**
+     * タスクを更新する
+     * @param int $id
+     * @param int $status
+     */
+    public function update(int $id, int $status)
+    {
+        $sql = "UPDATE `todo` SET status = :status WHERE id = :id";
+        $stmt = $this->dbh->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':status', $status, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+    /**
      * タスクを削除する
      */
     public function delete()
