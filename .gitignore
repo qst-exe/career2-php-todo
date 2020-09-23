@@ -1,2 +1,5 @@
 /vendor/
 /.env
+/.floo
+/.flooignore
+/migrations/.migrations.log
