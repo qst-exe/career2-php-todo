@@ -34,6 +34,8 @@ $ vendor/bin/phpmig migrate
 $ php -S localhost:3000 -t . 
 ```
 
+※ 授業用の環境構築は[こちらの動画を参照](https://youtu.be/XwtassK4Q4I)
+
 ---
 
 [職業実践Ⅱ(PHP)](https://github.com/qst-exe/carrier2-php)
