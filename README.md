@@ -6,16 +6,33 @@ TODアプリです。
 
 - PHP 7.2以上
 
-## 困ったときに見るべきサイト
+## 環境構築
 
-- [PHP入門](https://www.javadrive.jp/php/)
-- [PHPマニュアル](https://www.php.net/manual/ja/index.php)
+clone
+```
+$ git clone git@github.com:qst-exe/career2-php-todo.git
+```
+
+composer install
+```
+$ composer install
+```
+
+.envに設定を入力
+```
+$ cp .env.sample .env
+```
+
+migrate
+```
+$ vendor/bin/phpmig migrate 
+```
+
+起動
+```
+$ php -S localhost:3000 -t . 
+```
 
 ---
 
 [職業実践Ⅱ(PHP)](https://github.com/qst-exe/carrier2-php)
-
-
-## Tips 
-
-[GitのPUSHに失敗するとき](https://wak-tech.com/archives/933)
