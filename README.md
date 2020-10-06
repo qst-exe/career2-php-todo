@@ -1,6 +1,9 @@
-# 職業実践Ⅱ(PHP)サンプルアプリケーション2
+# 職業実践Ⅱ(PHP) サンプルアプリケーション2
 
-TODアプリです。
+TODOアプリです。
+
+![localhost_3000_.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/36927/61f2a570-7f36-e473-601e-eaf09f7a5936.png "localhost_3000_.png")
+
 
 ## 動作環境
 
